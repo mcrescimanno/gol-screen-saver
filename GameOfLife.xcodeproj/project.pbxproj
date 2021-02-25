@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C07DE1D125E45AA3004F3BFC /* GameOfLifeView.h in Headers */ = {isa = PBXBuildFile; fileRef = C07DE1D025E45AA3004F3BFC /* GameOfLifeView.h */; };
-		C07DE1D325E45AA3004F3BFC /* GameOfLifeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C07DE1D225E45AA3004F3BFC /* GameOfLifeView.m */; };
+		C07DE1DE25E45AD1004F3BFC /* GameOfLifeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07DE1DD25E45AD1004F3BFC /* GameOfLifeView.swift */; };
+		C07DE1E125E45C5B004F3BFC /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07DE1E025E45C5B004F3BFC /* Cell.swift */; };
+		C07DE21F25E54A6B004F3BFC /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07DE21E25E54A6B004F3BFC /* Board.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C07DE1CD25E45AA3004F3BFC /* GameOfLife.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameOfLife.saver; sourceTree = BUILT_PRODUCTS_DIR; };
-		C07DE1D025E45AA3004F3BFC /* GameOfLifeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameOfLifeView.h; sourceTree = "<group>"; };
-		C07DE1D225E45AA3004F3BFC /* GameOfLifeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameOfLifeView.m; sourceTree = "<group>"; };
 		C07DE1D425E45AA3004F3BFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C07DE1DD25E45AD1004F3BFC /* GameOfLifeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOfLifeView.swift; sourceTree = "<group>"; };
+		C07DE1E025E45C5B004F3BFC /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		C07DE21E25E54A6B004F3BFC /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,9 +50,10 @@
 		C07DE1CF25E45AA3004F3BFC /* GameOfLife */ = {
 			isa = PBXGroup;
 			children = (
-				C07DE1D025E45AA3004F3BFC /* GameOfLifeView.h */,
-				C07DE1D225E45AA3004F3BFC /* GameOfLifeView.m */,
 				C07DE1D425E45AA3004F3BFC /* Info.plist */,
+				C07DE1DD25E45AD1004F3BFC /* GameOfLifeView.swift */,
+				C07DE1E025E45C5B004F3BFC /* Cell.swift */,
+				C07DE21E25E54A6B004F3BFC /* Board.swift */,
 			);
 			path = GameOfLife;
 			sourceTree = "<group>";
@@ -62,7 +65,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C07DE1D125E45AA3004F3BFC /* GameOfLifeView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +99,7 @@
 				TargetAttributes = {
 					C07DE1CC25E45AA3004F3BFC = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -133,7 +136,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C07DE1D325E45AA3004F3BFC /* GameOfLifeView.m in Sources */,
+				C07DE1DE25E45AD1004F3BFC /* GameOfLifeView.swift in Sources */,
+				C07DE1E125E45C5B004F3BFC /* Cell.swift in Sources */,
+				C07DE21F25E54A6B004F3BFC /* Board.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,12 +259,20 @@
 		C07DE1D825E45AA3004F3BFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = GameOfLife/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.matthew.crescimanno.GameOfLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Debug;
@@ -267,12 +280,19 @@
 		C07DE1D925E45AA3004F3BFC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = GameOfLife/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.matthew.crescimanno.GameOfLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Release;
